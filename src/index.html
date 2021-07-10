@@ -18,38 +18,64 @@
     <![endif]-->
   </head>
   <body>
+    <div class="countDown pink">
+      <p id="countDown" class="center-align white-text" style="padding: 1%;"></p>
+    </div>
     <div class="container" style="width: 650px;">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="text-center">Election Results</h1>
+          <h1 class="text-center">Blockchain Based Online Voting System</h1>
           <hr/>
           <br/>
           <div id="loader">
             <p class="text-center">Loading...</p>
           </div>
-          <div id="content" style="display: none;">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Votes</th>
-                </tr>
-              </thead>
-              <tbody id="candidatesResults">
-              </tbody>
-            </table>
-            <hr/>
-            <form onSubmit="App.castVote(); return false;">
-              <div class="form-group">
-                <label for="candidatesSelect">Select Candidate</label>
-                <select class="form-control" id="candidatesSelect">
-                </select>
+          
+          <div class="text-center" id="candidateWon">
+
+          </div>
+          <div id="allContent">
+            <div id="content" style="display: none;">
+              <div class="text-center p-3 mb-2 bg-dark text-white"><h3>Result</h3></div>
+              <br><br>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Votes Got</th>
+                  </tr>
+                </thead>
+                <tbody id="candidatesResults">
+                </tbody>
+              </table>
+              <hr/>
+            </div>
+              <div id="voteContent" style="display: none;">
+                <form onSubmit="App.castVote(); return false;">
+                  <div class="form-group">
+                    <label for="candidatesSelect">Select Candidate</label>
+                    <select class="form-control" id="candidatesSelect">
+                    </select>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" style="padding: 10px 30px 8px 30px" class="btn btn-success">Vote</button>
+                  </div>
+                  <hr />
+                </form>
               </div>
-              <button type="submit" class="btn btn-primary">Vote</button>
-              <hr />
-            </form>
-            <p id="accountAddress" class="text-center"></p>
+              
+              <div id="voteCasted" style="display: none;" class="text-center">
+                <h3>Your Vote has been casted successfully.</h3>
+                
+                <br><br><br>
+                <div class="text-center" >
+                  <p id="countDown"></p>
+                </div>
+              </div>
+              <p id="accountAddress" class="text-center"></p>
+
+            </div>  
           </div>
         </div>
       </div>
